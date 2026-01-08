@@ -15,7 +15,6 @@ SELECT product_name FROM production
 WHERE planned_quantity BETWEEN 150 AND 220;
 
 -- join tables
-
 SELECT 
 	p.production_date,
 	p.planned_quantity,
@@ -28,3 +27,7 @@ SELECT
 FROM production AS p
 JOIN products AS pr
 ON p.prod_id = pr.prod_id;
+
+--sum of each product from their id
+SELECT SUM(actual_quantity) FROM production
+GROUP BY prod_id;
